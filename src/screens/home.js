@@ -1,14 +1,18 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
+import {animations} from '../data/animations';
 
 export const Home = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => navigation.navigate('List')}
-        style={styles.button}>
-        <Text style={styles.text}>Shared Transition Tag Example</Text>
-      </TouchableOpacity>
+      {animations.map(animation => (
+        <TouchableOpacity
+          onPress={() => navigation.navigate(animation.name)}
+          style={styles.button}
+          key={animation.id}>
+          <Text style={styles.text}>{animation.name}</Text>
+        </TouchableOpacity>
+      ))}
     </View>
   );
 };
