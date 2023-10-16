@@ -1,2 +1,2 @@
 # react-native-animations
-Animation examples using React Native
+Animation examples using React Native Reanimated
